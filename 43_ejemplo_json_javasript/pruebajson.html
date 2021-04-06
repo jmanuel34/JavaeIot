@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	// crear el objero Json: forma 1
+	var obj1={"nombre":"pepe","edad":34};
+//	alert("nombre de la persona:" +obj1.nombre+ " edad: "+obj1.edad);
+	
+	// crear el objeto Json: forma 2
+	var obj2=new Object();
+	obj2.nombre= "Ana";
+	obj2.edad=20;
+	// convertir de JSon a texto
+//	alert(JSON.stringify(obj2));
+	// convertir texto a JSON
+	var resp="{\"nombre\":\"pedro\", \"edad\":29}";
+	var myjson=JSON.parse(resp);
+	alert("nombre de la persona:" +myjson.nombre+ " edad: "+myjson.edad);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	var ob=new XMLHttpRequest();
+	function mostrarDatos(){
+		let url="https://restcountries.eu/rest/v2/all/"
+		ob.open("GET",url, true);
+		ob.onreadystatechange=procesar;
+		ob.send(null);
+	}
+	function procesar(){
+    	if(ob.readyState==4){
+    		let lista=document.getElementById("paises");
+    		var arrayPaises=JSON.parse(ob.responseText);
+    		let opcion="";
+    		for (let pais of arrayPaises)
+    			opcion +="<option value='"+ob.name+"'>+"</option>"
+    		lista.innerHTML+=opcion
+    	}
+    }
+</script>
+</head>
+<body onload="mostrarDatos();">
+<div id="paises"></div>
+<div id="datos"></div>
+
+</body>
+</html>
